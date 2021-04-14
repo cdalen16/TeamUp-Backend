@@ -9,9 +9,10 @@ const schema = new Schema({
         firstName: { type: String, required: true },
         lastName: { type: String, required: true },
         role: {type:String, required: true},
-        createdDate: { type: Date, default: Date.now },
-        caloriegoal: { type: Number, required: true, default: 2000 },
-        minutegoal: { type: Number, required: true, default: 65 },
+        bio: {type:String, required: true},
+        // createdDate: { type: Date, default: Date.now },
+        // caloriegoal: { type: Number, required: true, default: 2000 },
+        // minutegoal: { type: Number, required: true, default: 65 },
         avatarcolor: { type: String, required: true, default: "012157" }
     }
 );

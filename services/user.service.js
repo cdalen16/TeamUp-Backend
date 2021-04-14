@@ -48,7 +48,7 @@ async function addUser(userParam) {
     else  if (await User.findOne({ email: userParam.email })) {
         throw 'Email "' + userParam.email + '" is already taken';
     }
-    console.log(userParam.avatarcolor);
+    // console.log(userParam.avatarcolor);
     const user = new User(userParam);
 
     // hash password

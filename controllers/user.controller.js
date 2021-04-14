@@ -5,8 +5,8 @@ module.exports = {
     authenticate,
     getAllUsers,
     register,
-    getGoals,
-    setGoals,
+    // getGoals,
+    // setGoals,
     getByName
 };
 
@@ -39,15 +39,15 @@ function getByName(req, res, next) {
 }
 
 
-function getGoals(req, res, next) {
-
-    userService.getGoals(req.params.username)
-        .then(goals => res.json(goals))
-        .catch(err => next(err));
-}
-
-function setGoals(req, res, next) {
-    userService.setGoals(req.body, req.user.sub)
-        .then(() => res.json({}))
-        .catch(err => next(err));
-}
+// function getGoals(req, res, next) {
+//
+//     userService.getGoals(req.params.username)
+//         .then(goals => res.json(goals))
+//         .catch(err => next(err));
+// }
+//
+// function setGoals(req, res, next) {
+//     userService.setGoals(req.body, req.user.sub)
+//         .then(() => res.json({}))
+//         .catch(err => next(err));
+// }
