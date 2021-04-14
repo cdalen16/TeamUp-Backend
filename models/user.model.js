@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-//TODO: notice that User has evolved and now includes 'caloriegoal' and 'minutegoal'.
-//DONE
 const schema = new Schema({
         username: { type: String, unique: true, required: true },
         email: { type: String, unique: true, required: true },

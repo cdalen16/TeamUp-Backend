@@ -9,9 +9,8 @@ router.post('/authenticate', userController.authenticate);
 router.post('/register', userController.register);
 router.get('/allusers', authorize(Role.admin),userController.getAllUsers);
 router.get('/getuser:username', userController.getByName);
-//TODO: add the needed routing for setting and getting user goal values. Hint: '/getgoals/:username' Hint2: '/setgoals'
-//DONE
-router.get('/getgoals:username', userController.getGoals);
-router.post('/setgoals', userController.setGoals);
+
+// router.get('/getgoals:username', userController.getGoals);
+// router.post('/setgoals', userController.setGoals);
 
 module.exports = router;

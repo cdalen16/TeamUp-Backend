@@ -39,8 +39,6 @@ function getByName(req, res, next) {
 }
 
 
-//TODO: get goals (calorie goal and minute goal) for the specific username in 'req.params...' and send the JSON back the to the user that requested the information. Hint: write a middleware function and add it to the exports.
-//DONE
 function getGoals(req, res, next) {
 
     userService.getGoals(req.params.username)
@@ -48,8 +46,6 @@ function getGoals(req, res, next) {
         .catch(err => next(err));
 }
 
-//TODO: set goals (calorie goal and minute goal) for a user. Hint: write a middleware function and add it to the module exports.
-//DONE
 function setGoals(req, res, next) {
     userService.setGoals(req.body, req.user.sub)
         .then(() => res.json({}))
