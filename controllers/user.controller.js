@@ -5,8 +5,6 @@ module.exports = {
     authenticate,
     getAllUsers,
     register,
-    // getGoals,
-    // setGoals,
     getByName
 };
 

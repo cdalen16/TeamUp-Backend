@@ -11,8 +11,6 @@ module.exports = {
     getAllUsers,
     getByUsername,
     addUser
-    // setGoals,
-    // getGoals
 }
 
 async function authenticate({ username, password }) {
