@@ -21,7 +21,7 @@ app.use(cors());
 app.use(jwt());
 
 app.use('/user', require('./routes/user.router'));
-// app.use('/parecord', require('./routes/parecord.router'));
+app.use('/chat', require('./routes/chat.router'));
 // app.use('/rank', require('./routes/ranks.router'));
 app.use(errorHandler);
 
