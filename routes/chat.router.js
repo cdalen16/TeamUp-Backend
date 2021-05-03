@@ -8,7 +8,5 @@ const authorize = require('../_helpers/authorize');
 router.post('/sendChat', chatController.sendChat);
 router.get('/allchats', chatController.getAllChats);
 
-// router.get('/getgoals:username', userController.getGoals);
-// router.post('/setgoals', userController.setGoals);
 
 module.exports = router;
