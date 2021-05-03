@@ -10,7 +10,7 @@ router.post('/register', userController.register);
 router.get('/allusers', authorize(Role.admin),userController.getAllUsers);
 router.get('/getuser:username', userController.getByName);
 
+module.exports = router;
 // router.get('/getgoals:username', userController.getGoals);
 // router.post('/setgoals', userController.setGoals);
 
-module.exports = router;
