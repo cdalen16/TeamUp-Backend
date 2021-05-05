@@ -43,9 +43,10 @@ async function addTeam({team, username},userid){
 }
 
 async function editTeam(team, userid){
-    // console.log(userid, team.teamName)
+    console.log(userid, team.teamName)
     // const user = await User.findOne({username})
     const temp = await Team.findOne({createdBy: userid, teamName: team.teamName});
+
     if(!temp){
         throw 'You cannot edit the team since it was not created by you.';
     }
