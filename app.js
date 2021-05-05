@@ -22,6 +22,8 @@ app.use(jwt());
 
 app.use('/user', require('./routes/user.router'));
 app.use('/chat', require('./routes/chat.router'));
+app.use('/team', require('./routes/team.router'));
+
 // app.use('/rank', require('./routes/ranks.router'));
 app.use(errorHandler);
 
