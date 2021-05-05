@@ -5,7 +5,8 @@ module.exports = {
     authenticate,
     getAllUsers,
     register,
-    getByName
+    getByName,
+    changePass
 };
 
 
@@ -44,8 +45,8 @@ function getByName(req, res, next) {
 //         .catch(err => next(err));
 // }
 //
-// function setGoals(req, res, next) {
-//     userService.setGoals(req.body, req.user.sub)
-//         .then(() => res.json({}))
-//         .catch(err => next(err));
-// }
+function changePass(req, res, next) {
+    userService.changePassword(req.body, req.user.sub)
+        .then(() => res.json({}))
+        .catch(err => next(err));
+}

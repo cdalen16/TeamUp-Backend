@@ -12,7 +12,8 @@ module.exports = {
     authenticate,
     getAllUsers,
     getByUsername,
-    addUser
+    addUser,
+    changePassword
 }
 
 async function authenticate({ username, password }) {
@@ -62,9 +63,9 @@ async function addUser(userParam) {
 }
 
 
-// async function setGoals(values, userid){
-//     await User.updateOne({ _id: {$eq: userid} }, { caloriegoal: values.caloriegoal, minutegoal: values.minutegoal});
-// }
+async function changePassword(values, userid){
+    await User.updateOne({ _id: {$eq: userid} }, { hash: bcrypt.hashSync(values.password, 10) });
+}
 //
 //
 // async function getGoals(username){
