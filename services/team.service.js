@@ -14,8 +14,13 @@ async function getAllTeams(){
     return await Team.find().populate({path:'createdBy', select:'teamName'})
 }
 
-async function deleteTeam(id){
-    return await Team.deleteOne({'createdDate':id});
+async function deleteTeam(username, date) {
+    // console.log(username)
+    const temp = await Team.findOne({createdBy: username, createdDate: date});
+    if(!temp){
+        throw 'You cannot edit the team since it was not created by you.';
+    }
+    return await Team.deleteOne({'createdDate':date});
 }
 
 async function addTeam({team, username},userid){

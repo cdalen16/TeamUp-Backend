@@ -6,7 +6,8 @@ module.exports = {
     getAllUsers,
     register,
     getByName,
-    changePass
+    changePass,
+    changeUserBio
 };
 
 
@@ -38,15 +39,13 @@ function getByName(req, res, next) {
 }
 
 
-// function getGoals(req, res, next) {
-//
-//     userService.getGoals(req.params.username)
-//         .then(goals => res.json(goals))
-//         .catch(err => next(err));
-// }
-//
 function changePass(req, res, next) {
     userService.changePassword(req.body, req.user.sub)
+        .then(() => res.json({}))
+        .catch(err => next(err));
+}
+function changeUserBio(req, res, next) {
+    userService.changeBio(req.body, req.user.sub)
         .then(() => res.json({}))
         .catch(err => next(err));
 }

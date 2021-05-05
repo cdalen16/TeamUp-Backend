@@ -18,7 +18,7 @@ function getAllTeams(req, res, next){
 
 function deleteTeam(req, res, next){
     console.log('in deleteTeam method..', req.params.date);
-    teamService.deleteTeam(req.params.date).then(teams =>{
+    teamService.deleteTeam(req.user.sub, req.params.date).then(teams =>{
         res.json(teams)}).catch(err => next(err));
 }
 

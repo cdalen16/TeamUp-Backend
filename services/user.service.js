@@ -13,7 +13,8 @@ module.exports = {
     getAllUsers,
     getByUsername,
     addUser,
-    changePassword
+    changePassword,
+    changeBio
 }
 
 async function authenticate({ username, password }) {
@@ -66,12 +67,7 @@ async function addUser(userParam) {
 async function changePassword(values, userid){
     await User.updateOne({ _id: {$eq: userid} }, { hash: bcrypt.hashSync(values.password, 10) });
 }
-//
-//
-// async function getGoals(username){
-//
-//     const thisuser = await User.findOne({username: username});
-//     let cal = thisuser.caloriegoal;
-//     let min = thisuser.minutegoal;
-//     return [cal, min];
-// }
+
+async function changeBio(values, userid){
+    await User.updateOne({ _id: {$eq: userid} }, { bio: values.bio });
+}
